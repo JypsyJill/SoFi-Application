@@ -5,17 +5,17 @@ const value = require('../test-assets/data')
 module.exports = {
     before: browser => {
         browser.url('https://www.sofi.com')
-        // }, 
-        // after: browser => {
-        //     browser.end()
     },
+    // after: browser => {
+    //     browser.end()
+    // },
     'Get Mortgage Rate and Apply': browser => {
         browser
             .click(selector.logIn)
             .setValue(selector.email, "jypsytesting@gmail.com")
             .setValue(selector.password, "Junker001!")
             .click(selector.loginButton)
-            .waitForElementVisible(selector.mortgageApplication,5000)
+            .waitForElementVisible(selector.mortgageApplication, 5000)
             .click(selector.mortgageApplication)
             // .waitForElementVisible(selector.checkMyRateButton,5000)
             // .setValue(selector.mailingAddress, "123 South Main")
@@ -37,29 +37,36 @@ module.exports = {
             // .setValue(selector.individualAnnIncome, "75,000")
             // .setValue(selector.yearsExperience, "7")
             .click(selector.mortgageRefi)
-            .pause(10000)
-            // .setValue(selector.subjectAddress, "123 Main")
-            
-        
-            // .setValue(selector.occupancyType, "Second Home")
-            // .setValue(selector.propertyType, "Condominium")
-             
-            
-            // .setValue(selector.subjectPropertyAddress, "12345 Testing Way")
-            // .click(selector.subjectCity)
-  
-            .setValue(selector.estPropValue, "500,000")
-            .setValue(selector.currentMortBalance, "100000")
-            .setValue(selector.hoaDues, "0")
-            .setValue(selector.maritalStatus, "Married")
-            .setValue(selector.householdCount, "2 or more")
-            .click(selector.creditAuthorization)
-            .setValue(selector.subjectCity, "Midvale")
-            .click(selector.utahStateSelector)
-            .setValue(selector.subjectZip, "84047")
-            .setValue(selector.proposedPropertyCounty, "Salt Lake")
-            // // .click(selector.preApprovalFormButton)
-            
+            // .pause(2000)
+            .useXpath()
+            .waitForElementVisible(selector.subjectAddress, 3000)
+            .setValue(selector.subjectAddress, '123 Main St')
+            .setValue(selector.apartment, '#224')
+            .setValue(selector.city, 'SLC')
+            .setValue(selector.zip, '84111')
+            // .useCss()
+            // .pause(2000)
+
+
+        // .setValue(selector.occupancyType, "Second Home")
+        // .setValue(selector.propertyType, "Condominium")
+
+
+        // .setValue(selector.subjectPropertyAddress, "12345 Testing Way")
+        // .click(selector.subjectCity)
+
+        // .setValue(selector.estPropValue, "500,000")
+        //     .setValue(selector.currentMortBalance, "100000")
+        //     .setValue(selector.hoaDues, "0")
+        //     .setValue(selector.maritalStatus, "Married")
+        //     .setValue(selector.householdCount, "2 or more")
+        //     .click(selector.creditAuthorization)
+        //     .setValue(selector.subjectCity, "Midvale")
+        //     .click(selector.utahStateSelector)
+        //     .setValue(selector.subjectZip, "84047")
+        //     .setValue(selector.proposedPropertyCounty, "Salt Lake")
+        // // .click(selector.preApprovalFormButton)
+
 
     }
 

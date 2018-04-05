@@ -12,9 +12,9 @@ module.exports = {
     loginButton: '#login-btn',
     mortgageApplication: 'a[href="https://www.sofi.com/b/landing/start/MORT?isNewApp=true"]',
     // mailingAddress: '#addr_addr1',
-    // apartment: '#addr_addr2',
-    // city: '#addr_city',
-    // zip: '#addr_zip',
+    apartment: '(//input[@id="addr2"])[2]',
+    city: '(//input[@id="city"])[2]',
+    zip: '(//input[@id="zip"])[2]',
     // cellNumber: '#primaryPhone',
     // communicationPolicyAgree: '#subscribedToTcpa',
     dobMonth: '#dobMonth',
@@ -58,7 +58,7 @@ module.exports = {
     mortgageRefi: '#mortgageType_Refi',
     occupancyType: '#occupancyType',
     propertyType: '#propertyType',
-    subjectAddress: 'div[class="col-md-12"]',
+    subjectAddress: '(//input[@id="addr1"])[2]',
     subjectCity: 'input[name="city"]',
     cashoutRefiState: 'id[name="state"]',
     proposedPropertyCounty: '#proposedPropertyCounty',
@@ -71,6 +71,8 @@ module.exports = {
     creditAuthorization: '#creditAuthorization_field',
     preApprovalFormButton: '#preapprovalFormButton',
     utahStateSelector: 'option[value="UT"]',
+    newPurchase: 'input[id="mortgageType_New"]',
+    propPropertyState: 'select[id="proposedPropertyState"]'
 
 
 
